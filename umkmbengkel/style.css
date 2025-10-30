@@ -204,6 +204,20 @@ nav ul li a:hover {
     margin: 20px auto;
 }
 
+.service-item {
+  background-color: #111;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center; /* tetap tengah untuk judul */
+  box-shadow: 0 0 10px #0ff;
+}
+
+.service-item p {
+  text-align: left; /* paragraf (isi layanan) jadi rata kiri */
+  margin-left: 20px;
+}
+
+
 /* ==================================== */
 /* 5. PEMESANAN ANTRIAN */
 /* ==================================== */

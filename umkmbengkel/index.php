@@ -17,7 +17,7 @@
                 <ul>
                     <li><a href="#hero">Beranda</a></li>
                     <li><a href="#services">Layanan Unggulan</a></li>
-                    <li><a href="#jenis-pelayanan">Jenis Pelayanan</a></li> <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#booking" class="btn-nav">Pesan Antrian</a></li>
                 </ul>
             </nav>
@@ -44,36 +44,58 @@
 </section>
 
         <section id="services" class="section-padding">
-            <div class="container">
-                <h3 class="text-neon">Layanan Unggulan Kami</h3>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <h4>Servis Berkala & Tune Up</h4>
-                        <p>Pastikan performa kendaraan Anda selalu optimal dengan layanan tune up dan servis rutin kami.</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Perbaikan Kelistrikan</h4>
-                        <p>Mengatasi masalah kelistrikan, lampu, aki, dan instalasi sistem modern lainnya.</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Ganti Oli & Spare Part</h4>
-                       <p>Kami menyediakan berbagai oli berkualitas dan spare part original dengan harga kompetitif.</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Servis Berkala & Tune Up</h4>
-                        <p>Pastikan performa kendaraan Anda selalu optimal dengan layanan tune up dan servis rutin kami.</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Perbaikan Kelistrikan</h4>
-                        <p>Mengatasi masalah kelistrikan, lampu, aki, dan instalasi sistem modern lainnya.</p>
-                    </div>
-                    <div class="service-item">
-                        <h4>Ganti Oli & Spare Part</h4>
-                       <p>Kami menyediakan berbagai oli berkualitas dan spare part original dengan harga kompetitif.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <div class="container">
+    <h3 class="text-neon">Layanan Unggulan Kami</h3>
+
+    <!-- GRID UTAMA -->
+    <div class="service-grid">
+
+      <div class="service-item">
+        <h3 class="text-neon">Pekerjaan Bubut (Turning)</h3>
+        <p>⚙️Bubut poros (shaft turning)</p>
+        <p>⚙️Bubut cakram rem</p>
+        <p>⚙️Bubut puli (pulley)</p>
+        <p>⚙️Bubut drat luar / dalam</p>
+        <p>⚙️Bubut rumah bearing</p>
+        <p>⚙️Bubut silinder blok</p>
+        <p>⚙️Bubut kepala baut / mur custom.</p>
+      </div>
+
+      <div class="service-item">
+        <h3 class="text-neon">Pekerjaan Frais (Milling)</h3>
+        <p>⚙️Frais permukaan</p>
+        <p>⚙️Frais alur (slotting)</p>
+        <p>⚙️Frais roda gigi (gear cutting)</p>
+        <p>⚙️Frais lubang oval / slot panjang</p>
+      </div>
+
+      <div class="service-item">
+        <h3 class="text-neon">Pekerjaan Bor & Reamer</h3>
+        <p>⚙️Bor lubang baru</p>
+        <p>⚙️Reamer lubang</p>
+        <p>⚙️Tapping (bikin ulir dalam)</p>
+        <p>⚙️Counterbore / chamfer</p>
+      </div>
+
+      <div class="service-item">
+        <h3 class="text-neon">Pengelasan & Rebuild</h3>
+        <p>⚙️Pengelasan poros aus</p>
+        <p>⚙️Rebuild dudukan bearing</p>
+        <p>⚙️Las permukaan logam</p>
+        <p>⚙️Perbaikan blok mesin</p>
+      </div>
+
+      <div class="service-item">
+        <h3 class="text-neon">Pekerjaan Grinding & Finishing</h3>
+        <p>⚙️Grinding permukaan rata</p>
+        <p>⚙️Finishing poros</p>
+        <p>⚙️Poles hasil las</p>
+        <p>⚙️Finishing presisi akhir</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
        
         <section id="about" class="section-padding">
@@ -113,31 +135,42 @@
                 <div class="form-container">
                     <p style="margin-bottom: 25px; color: #aaa;">Isi formulir di bawah ini untuk memesan slot perbaikan Anda tanpa perlu menunggu lama di bengkel.</p>
 
-                    <form id="antrianForm">
-                        <div class="form-group">
-                            <label for="nama">Nama Lengkap</label>
-                            <input type="text" id="nama" name="nama" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telepon">Nomor Telepon (WA)</label>
-                            <input type="tel" id="telepon" name="telepon" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="jenis_kendaraan">Jenis Kendaraan</label>
-                            <select id="jenis_kendaraan" name="jenis_kendaraan" required>
-                                <option value="">Pilih Jenis</option>
-                                <option value="motor">Motor</option>
-                                <option value="mobil">Mobil</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal">Pilih Tanggal Booking</label>
-                            <input type="date" id="tanggal" name="tanggal" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="keluhan">Deskripsi Keluhan/Permintaan Servis</label>
-                            <textarea id="keluhan" name="keluhan" rows="4" required placeholder="Contoh: Ganti oli rutin, setelan karburator, lampu mati"></textarea>
-                        </div>
+                    <form id="antrianForm" action="simpan_antrian.php" method="POST" class="booking-form">
+
+                    <div class="form-group">
+                        <label for="nama">Nama Lengkap</label>
+                        <input type="text" id="nama" name="nama" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telepon">Nomor Telepon (WA)</label>
+                        <input type="tel" id="telepon" name="telepon" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tanggal">Pilih Tanggal Booking</label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jenis_perbaikan" class="text-neon">Jenis Perbaikan</label>
+                        <select id="jenis_perbaikan" name="jenis_perbaikan" required>
+                            <option value="" disabled selected>🛠 Pilih Jenis Perbaikan</option>
+                            <option value="turning">🪛 Pekerjaan Bubut (Turning)</option>
+                            <option value="milling">🔩 Pekerjaan Frais (Milling)</option>
+                            <option value="bor_reamer">🔨 Pekerjaan Bor & Reamer</option>
+                            <option value="pengelasan">⚒ Pengelasan & Rebuild</option>
+                            <option value="grinding">⚙ Pekerjaan Grinding & Finishing</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keluhan">Deskripsi Keluhan / Permintaan Servis</label>
+                        <textarea id="keluhan" name="keluhan" rows="4" required placeholder="Contoh: Pengelasan poros aus, bubut cakram rem, dll."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                    </div>
 
                         <button type="submit" class="btn">Kirim Pesanan Antrian</button>
                     </form>
