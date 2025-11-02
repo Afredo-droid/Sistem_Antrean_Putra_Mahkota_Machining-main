@@ -1,15 +1,19 @@
-/* ==================================== */
-/* 1. VARIABEL & RESET DASAR (TEMA NEON) */
-/* ==================================== */
+/* ======================== */
+/* 1. PALET WARNA RUANGGURU */
+/* ======================== */
 :root {
-    --primary-dark: #121212;
-    --secondary-dark: #1e1e1e;
-    --text-light: #ffffff;
-    --accent-neon: #00ffc8; /* Hijau Neon Khas */
-    --accent-glow: rgba(0, 255, 200, 0.4);
-    --form-bg: #2a2a2a;
+    --ruangguru-blue-primary: #007bff; /* Biru Dominan */
+    --ruangguru-blue-dark: #0056b3;
+    --ruangguru-yellow-accent: #ffc107; /* Kuning/Orange Aksen */
+    --ruangguru-green-accent: #28a745;
+    --ruangguru-white: #ffffff; /* Latar Belakang */
+    --ruangguru-light-gray: #f8f9fa; /* Latar Belakang Sekunder */
+    --ruangguru-dark-text: #343a40; /* Warna Teks Gelap */
 }
 
+/* ======================== */
+/* 2. RESET DAN DASAR */
+/* ======================== */
 * {
     margin: 0;
     padding: 0;
@@ -17,64 +21,40 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* Background gambar utama website */
-    background-image: url('../image/bgumkm.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: var(--text-light);
+    font-family: 'Poppins', sans-serif; /* Menggunakan font yang lebih modern dan clean */
+    background-color: var(--ruangguru-white);
+    color: var(--ruangguru-dark-text);
     line-height: 1.6;
-}
-
-a {
-    color: var(--accent-neon);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #4dffdd;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-.text-neon {
-    color: var(--accent-neon);
-    text-shadow: 0 0 8px var(--accent-glow);
+a {
+    color: var(--ruangguru-blue-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.btn {
-    display: inline-block;
-    background: var(--accent-neon);
-    color: var(--primary-dark);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-    box-shadow: 0 0 10px var(--accent-glow);
+a:hover {
+    color: var(--ruangguru-blue-dark);
 }
 
-.btn:hover {
-    background: #4dffdd;
-    box-shadow: 0 0 15px #4dffdd;
+.section-padding {
+    padding: 80px 0;
 }
 
-/* ==================================== */
-/* 2. HEADER/NAVBAR */
-/* ==================================== */
+/* ======================== */
+/* 3. HEADER & NAVIGASI */
+/* ======================== */
 header {
-    background: var(--secondary-dark);
+    background-color: var(--ruangguru-white);
     padding: 15px 0;
-    border-bottom: 2px solid var(--accent-neon);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow ringan */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -86,248 +66,317 @@ header .container {
     align-items: center;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-/* Styling LOGO GAMBAR */
-.navbar-logo {
-    height: 60px; /* Tinggi logo, bisa disesuaikan */
-    width: auto;
+.logo img {
+    height: 40px; 
 }
 
 nav ul {
-    display: flex;
     list-style: none;
+    display: flex;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 nav ul li a {
-     color: var(--text-light);
-     padding: 5px 0;
-     border-bottom: 2px solid transparent;
+    color: var(--ruangguru-dark-text);
+    font-weight: 500;
+    padding: 5px 10px;
 }
 
-nav ul li a:hover {
-    color: var(--accent-neon);
-    border-bottom: 2px solid var(--accent-neon);
+nav ul li a:hover:not(.btn-nav) {
+    color: var(--ruangguru-blue-primary);
+    border-bottom: 2px solid var(--ruangguru-blue-primary);
 }
 
-/* ==================================== */
-/* 3. HERO SECTION */
-/* ==================================== */
-#hero {
-    /* Background untuk section hero */
-    background: url('../image/baground umkm.jpg') center/cover no-repeat;
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Tombol Navigasi 'Pesan Antrian' (Mirip "Beli Paket Belajar") */
+.btn-nav {
+    background-color: var(--ruangguru-blue-primary);
+    color: var(--ruangguru-white) !important;
+    padding: 8px 20px;
+    border-radius: 8px; /* Sudut lebih membulat */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-nav:hover {
+    background-color: var(--ruangguru-blue-dark);
+    transform: translateY(-1px);
+}
+
+/* ======================== */
+/* 4. UTILITIES & TYPOGRAPHY */
+/* ======================== */
+
+/* 💡 PERBAIKAN: Menggunakan Kuning Aksen agar tulisan E-SPEED di Hero Section terlihat */
+.text-neon {
+    color: var(--ruangguru-yellow-accent); /* Warna Kuning/Orange Aksen */
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--ruangguru-white); 
+}
+
+/* ... (Sisa kode CSS tidak berubah) ... */
+
+h3 {
+    font-size: 2em;
+    margin-bottom: 40px;
     text-align: center;
-    padding: 80px 0;
-    position: relative;
+    font-weight: 700;
+    color: var(--ruangguru-blue-dark);
 }
 
-/* Overlay gelap untuk kontras */
-#hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+/* Tombol Aksi Utama (Mirip Ruangguru) */
+.btn {
+    display: inline-block;
+    background-color: var(--ruangguru-yellow-accent); 
+    color: var(--ruangguru-dark-text);
+    padding: 12px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+}
+
+.btn:hover {
+    background-color: #e6b200;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 193, 7, 0.6);
+}
+
+
+/* ======================== */
+/* 5. HERO SECTION */
+/* ======================== */
+#hero {
+    /* Menggunakan overlay biru cerah (Dominan di Ruangguru) */
+    background-color: var(--ruangguru-blue-primary); 
+    height: 70vh !important; /* Dibuat lebih pendek dari 100vh */
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* Hilangkan background image (atau gunakan background pattern/ilustrasi) */
+    background-image: none !important; 
+    
+    color: var(--ruangguru-white) !important;
 }
 
 #hero .container {
-    position: relative;
-    z-index: 1;
-}
-
-#hero h2 {
-    font-size: 3.5em;
-    margin-bottom: 10px;
-    text-shadow: 0 0 15px var(--accent-glow);
-}
-
-#hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-/* ==================================== */
-/* 4. LAYANAN & TENTANG KAMI */
-/* ==================================== */
-.section-padding {
-    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     text-align: center;
 }
 
-.section-padding h3 {
-    font-size: 2em;
-    margin-bottom: 40px;
+#hero p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    max-width: 600px;
+    font-weight: 300;
 }
 
-#services .service-grid {
+/* ======================== */
+/* 6. SERVICES SECTION (Grid) */
+/* ======================== */
+#services {
+    background-color: var(--ruangguru-light-gray);
+}
+
+.service-grid {
     display: flex;
-    justify-content: space-around;
-    gap: 30px;
     flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-#services .service-item {
-    background: var(--secondary-dark);
+.service-item {
+    background-color: var(--ruangguru-white);
     padding: 25px;
-    border-radius: 8px;
-    width: 30%;
-    min-width: 250px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    border-top: 3px solid var(--accent-neon);
-    transition: transform 0.3s;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow halus */
+    flex: 1 1 250px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    text-align: left;
 }
 
-#services .service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px var(--accent-glow);
+.service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.1);
 }
 
+.service-item h3 {
+    margin-top: 0;
+    font-size: 1.3em;
+    text-align: left;
+    margin-bottom: 15px;
+    color: var(--ruangguru-dark-text);
+}
+
+.service-item p {
+    color: #6c757d; /* Teks abu-abu halus */
+    margin-bottom: 8px;
+}
+
+/* ======================== */
+/* 7. ABOUT SECTION */
+/* ======================== */
 #about {
-    background: var(--secondary-dark);
+    background-color: var(--ruangguru-white);
+    text-align: center;
 }
 
 #about p {
     max-width: 800px;
-    margin: 20px auto;
-}
-
-.service-item {
-  background-color: #111;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center; /* tetap tengah untuk judul */
-  box-shadow: 0 0 10px #0ff;
-}
-
-.service-item p {
-  text-align: left; /* paragraf (isi layanan) jadi rata kiri */
-  margin-left: 20px;
-}
-
-
-/* ==================================== */
-/* 5. PEMESANAN ANTRIAN */
-/* ==================================== */
-#booking {
-    background: var(--primary-dark);
-    border-top: 1px solid var(--accent-neon);
-}
-
-#booking .form-container {
-    background: var(--secondary-dark);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-    max-width: 600px;
     margin: 0 auto;
-    text-align: left;
+    font-size: 1.1em;
+    color: #555;
 }
 
-#booking .form-group {
+/* ======================== */
+/* 8. GALLERY SECTION */
+/* ======================== */
+.gallery {
+    background-color: var(--ruangguru-light-gray);
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.gallery h2 {
+    color: var(--ruangguru-blue-dark) !important;
+    font-weight: 700;
+}
+
+.gallery-item img {
+    border-radius: 12px !important; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.3s ease;
+}
+.gallery-item img:hover {
+    transform: scale(1.03);
+}
+
+/* ======================== */
+/* 9. BOOKING FORM */
+/* ======================== */
+#booking {
+    background-color: var(--ruangguru-white);
+}
+
+.form-container {
+    max-width: 550px;
+    margin: 0 auto;
+    background-color: var(--ruangguru-light-gray);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-container p {
+    color: #6c757d !important;
+}
+
+.form-group {
     margin-bottom: 20px;
 }
 
-#booking label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: var(--accent-neon);
-    text-shadow: 0 0 5px var(--accent-glow);
+.form-group label {
+    color: var(--ruangguru-dark-text);
+    font-weight: 600;
 }
 
-#booking input,
-#booking select,
-#booking textarea {
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 12px;
-    background: var(--form-bg);
-    border: 1px solid #555;
-    border-radius: 5px;
-    color: var(--text-light);
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    background-color: var(--ruangguru-white);
+    color: var(--ruangguru-dark-text);
     font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
     outline: none;
-    transition: border-color 0.3s;
+    border-color: var(--ruangguru-blue-primary);
+    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
 }
 
-#booking textarea {
-    resize: vertical;
+.form-group select option {
+    background-color: var(--ruangguru-white);
+    color: var(--ruangguru-dark-text);
 }
 
-#booking input:focus,
-#booking select:focus,
-#booking textarea:focus {
-    border-color: var(--accent-neon);
-    box-shadow: 0 0 5px var(--accent-glow);
-}
-
-#booking button[type="submit"] {
-    width: 100%;
+.success-message {
+    background-color: var(--ruangguru-green-accent);
+    color: var(--ruangguru-white);
     padding: 15px;
-    margin-top: 10px;
-}
-
-#booking .success-message {
+    border-radius: 8px;
     margin-top: 20px;
-    padding: 15px;
-    background-color: rgba(0, 255, 200, 0.1);
-    color: var(--accent-neon);
-    border: 1px solid var(--accent-neon);
-    border-radius: 5px;
     text-align: center;
-    display: none; /* Sembunyikan default */
+    font-weight: 600;
 }
 
-/* ==================================== */
-/* 6. FOOTER */
-/* ==================================== */
+/* ======================== */
+/* 10. FOOTER */
+/* ======================== */
 footer {
-    background: var(--secondary-dark);
-    color: #8f8c8c;
+    background-color: var(--ruangguru-dark-text);
+    color: var(--ruangguru-white);
     text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid var(--accent-neon);
+    padding: 25px 0;
+    font-size: 0.9em;
 }
 
 footer p {
     margin: 5px 0;
 }
 
-/* ==================================== */
-/* 7. MEDIA QUERIES (RESPONSIVE) */
-/* ==================================== */
+/* ======================== */
+/* 11. MEDIA QUERIES */
+/* ======================== */
 @media (max-width: 768px) {
-    #hero h2 {
-        font-size: 2.5em;
+    .section-padding {
+        padding: 50px 0;
     }
-
-    /* Penyesuaian navbar untuk mobile */
+    
     header .container {
         flex-direction: column;
+        text-align: center;
     }
+
     nav ul {
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 10px;
     }
+
     nav ul li {
         margin: 5px 10px;
     }
+    
+    #hero h2 {
+        font-size: 2em;
+    }
 
-    #services .service-item {
-        width: 100%;
-        margin-bottom: 20px;
+    .service-item {
+        flex: 1 1 100%;
     }
 }

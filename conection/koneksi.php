@@ -1,23 +1,16 @@
 <?php
-$host = "localhost";
-$user = "root";       // username default XAMPP
-$pass = "";           // kosongkan jika belum ada password
-$db   = "umkm";       // nama database kamu di phpMyAdmin
+// conection/koneksi.php (atau koneksi_md.php)
+ini_set('display_errors', 1); 
+error_reporting(E_ALL);
 
-$conn = mysqli_connect($host, $user, $pass, $db);
+$host = "localhost"; 
+$user = "root";      
+$pass = "";          
+$db = "umkm";        
 
-if (mysqli_query($conn, $sql)) {
-    echo "<script>
-            alert('✅ Pesanan berhasil disimpan!');
-            window.location='index.php';
-          </script>";
-} else {
-    echo "<pre>❌ Error: " . mysqli_error($conn) . "</pre>";
+$koneksi = mysqli_connect($host, $user, $pass, $db);
+
+if (!$koneksi) {
+    die("❌ GAGAL KONEKSI: " . mysqli_connect_error());
 }
-if ($conn) {
-    echo "✅ Koneksi berhasil";
-} else {
-    echo "❌ Gagal koneksi: " . mysqli_connect_error();
-}
-
 ?>

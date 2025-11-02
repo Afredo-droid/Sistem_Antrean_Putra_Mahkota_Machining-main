@@ -1,45 +1,70 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const antrianForm = document.getElementById('antrianForm');
-    const successMessage = document.getElementById('successMessage');
+// === SMOOTH SCROLL UNTUK NAVIGASI ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
 
-    // 1. Logika Pemrosesan Form Antrian
-    if (antrianForm) {
-        antrianForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Mencegah form di-submit secara default
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 80, // jarak dari atas (biar nggak ketutupan header)
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 
-            // --- SIMULASI PENGIRIMAN DATA ---
-            
-            // Mengambil data dari form
-            const formData = new FormData(this);
-            const nama = formData.get('nama');
-            const telepon = formData.get('telepon');
-            
-            console.log(`Pemesanan antrian dari: ${nama}, Telp: ${telepon}`);
-            
-            // Sembunyikan form dan tampilkan pesan sukses
-            antrianForm.style.display = 'none';
-            successMessage.style.display = 'block';
+// === FORM ANTRIAN ===
+const form = document.getElementById('antrianForm');
+const successMessage = document.getElementById('successMessage');
 
-            // Opsional: Kembali ke tampilan form setelah 8 detik
-            setTimeout(() => {
-                 antrianForm.style.display = 'block';
-                 successMessage.style.display = 'none';
-                 this.reset(); // Mengosongkan form
-            }, 8000); 
-        });
+if (form) {
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Ambil data form
+    const nama = document.getElementById('nama').value.trim();
+    const telepon = document.getElementById('telepon').value.trim();
+    const tanggal = document.getElementById('tanggal').value.trim();
+    const jenis = document.getElementById('jenis_perbaikan').value;
+    const keluhan = document.getElementById('keluhan').value.trim();
+
+    if (!nama || !telepon || !tanggal || !jenis || !keluhan) {
+      alert("⚠️ Harap isi semua kolom terlebih dahulu.");
+      return;
     }
 
-    // 2. Efek Smooth Scroll untuk link navigasi
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            // Kecualikan tombol Pesan Antrian di navbar agar tidak terpengaruh smooth scroll
-            if (this.classList.contains('btn-nav')) return; 
+    // Tampilkan pesan sukses
+    successMessage.style.display = 'block';
+    successMessage.style.opacity = '0';
+    successMessage.scrollIntoView({ behavior: 'smooth' });
 
-            e.preventDefault();
+    // Efek fade-in
+    setTimeout(() => {
+      successMessage.style.transition = 'opacity 0.8s ease';
+      successMessage.style.opacity = '1';
+    }, 100);
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+    // Reset form
+    form.reset();
+
+    // Hilangkan pesan otomatis setelah 8 detik
+    setTimeout(() => {
+      successMessage.style.opacity = '0';
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+      }, 800);
+    }, 8000);
+  });
+}
+
+// === EFEK HEADER SCROLL ===
+const header = document.querySelector('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 80) {
+    header.style.background = "#fff";
+    header.style.boxShadow = "0 2px 12px rgba(0,0,0,0.06)";
+  } else {
+    header.style.background = "transparent";
+    header.style.boxShadow = "none";
+  }
 });
